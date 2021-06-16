@@ -1,13 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2021-06-08 20:45:22
- * @LastEditTime: 2021-06-15 23:24:51
+ * @LastEditTime: 2021-06-16 22:27:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \beautytang-designs\src\App.tsx
  */
 import React from 'react';
 import Button, {ButtonType, ButtonSize} from "./components/button/index";
+import Alert, { AlertType } from "./components/alert/index";
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,11 @@ function App() {
         <p></p>
         <Button types={ButtonType.Primary} size={ButtonSize.large}>Primary</Button>
       </header>
+
+        <Alert/>
+        <Alert types={AlertType.Danger} title="nihao" />
+        <Alert types={AlertType.Warning} hasClose={true} />
+        <Alert types={AlertType.Success} title="成功的Alert" hasClose={true} />
     </div>
   );
 }

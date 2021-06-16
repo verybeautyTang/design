@@ -1,0 +1,31 @@
+.alert {
+  position: relative;
+  display: block;
+  font-weight: $btn-font-weight;
+  white-space: nowrap;
+  list-style: $btn-line-height;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  height: 100%;
+}
+.alert-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.alert-delete {
+  cursor: pointer;
+}
+.alert-default {
+  @include alert-color($primary, $white,  $primary)
+}
+.alert-success {
+  @include alert-color($success, $white,  $success)
+}
+.alert-danger {
+  @include alert-color($danger, $white,  $danger)
+}
+.alert-warning {
+  @include alert-color($warning, $white,  $warning)
+}

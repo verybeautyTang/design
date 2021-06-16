@@ -21,3 +21,8 @@
   }
 
 }
+@mixin alert-color ($background, $color, $border) {
+  border-color: $border;
+  background: $background;
+  color: $color;
+}
