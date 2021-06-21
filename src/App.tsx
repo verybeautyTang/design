@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-06-08 20:45:22
- * @LastEditTime: 2021-06-16 22:27:01
+ * @LastEditTime: 2021-06-21 23:51:21
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \beautytang-designs\src\App.tsx
@@ -9,6 +9,8 @@
 import React from 'react';
 import Button, {ButtonType, ButtonSize} from "./components/button/index";
 import Alert, { AlertType } from "./components/alert/index";
+import Menu from "./components/menu/menu";
+import MenuItem from "./components/menu/menu-item";
 function App() {
   return (
     <div className="App">
@@ -27,6 +29,13 @@ function App() {
         <Alert types={AlertType.Danger} title="nihao" />
         <Alert types={AlertType.Warning} hasClose={true} />
         <Alert types={AlertType.Success} title="成功的Alert" hasClose={true} />
+        {/* Menu */}
+        <Menu defaultIndex={0}>
+          <MenuItem index={0}>111</MenuItem>
+          <MenuItem index={1}>222</MenuItem>
+          <MenuItem index={2}>333</MenuItem>
+          <MenuItem index={3}>444</MenuItem>
+        </Menu>
     </div>
   );
 }
