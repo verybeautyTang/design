@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-06-08 20:45:22
- * @LastEditTime: 2021-06-21 23:51:21
+ * @LastEditTime: 2021-06-28 23:33:22
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \beautytang-designs\src\App.tsx
@@ -11,6 +11,7 @@ import Button, {ButtonType, ButtonSize} from "./components/button/index";
 import Alert, { AlertType } from "./components/alert/index";
 import Menu from "./components/menu/menu";
 import MenuItem from "./components/menu/menu-item";
+import SubMenu from "./components/menu/sub-menu";
 function App() {
   return (
     <div className="App">
@@ -31,10 +32,13 @@ function App() {
         <Alert types={AlertType.Success} title="成功的Alert" hasClose={true} />
         {/* Menu */}
         <Menu defaultIndex={0}>
-          <MenuItem index={0}>111</MenuItem>
-          <MenuItem index={1}>222</MenuItem>
-          <MenuItem index={2}>333</MenuItem>
-          <MenuItem index={3}>444</MenuItem>
+          <MenuItem>111</MenuItem>
+          <MenuItem>222</MenuItem>
+          <SubMenu title="open It">
+          <MenuItem>333</MenuItem>
+          </SubMenu>
+          <MenuItem>555</MenuItem>
+          <MenuItem>444</MenuItem>
         </Menu>
     </div>
   );
