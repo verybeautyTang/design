@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-06-21 22:55:35
- * @LastEditTime: 2021-06-28 22:54:16
+ * @LastEditTime: 2021-07-05 22:02:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \beautytang-designs\src\components\menu\menu-item.tsx
@@ -12,7 +12,7 @@ import { MenuContext } from "./menu";
 export interface MenuItemProps {
   className?: string,
   style?: React.CSSProperties,
-  index?: number,
+  index?: string,
   disabled?: boolean,
   children?: React.ReactNode
 }
@@ -24,7 +24,7 @@ function MenuItem(props:MenuItemProps) {
     'menu-item-disabled': disabled
   })
   const handleClick = () => {
-    if(MenuItemContext.onSelect && !disabled && typeof(index) === 'number')
+    if(MenuItemContext.onSelect && !disabled && typeof(index) === 'string')
       MenuItemContext.onSelect(index)
   }
   return (

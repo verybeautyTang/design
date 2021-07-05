@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-06-08 20:45:22
- * @LastEditTime: 2021-06-28 23:33:22
+ * @LastEditTime: 2021-07-05 23:40:12
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \beautytang-designs\src\App.tsx
@@ -12,10 +12,16 @@ import Alert, { AlertType } from "./components/alert/index";
 import Menu from "./components/menu/menu";
 import MenuItem from "./components/menu/menu-item";
 import SubMenu from "./components/menu/sub-menu";
+import Icon from './components/icon/index';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fas)
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Icon icon="spinner" size="10x" theme="info"></Icon>
         <Button>GOOD JOB</Button>
         <Button types={ButtonType.Link}  target="_blank" href="https://www.baidu.com">Link</Button>
         <p></p>
@@ -31,11 +37,11 @@ function App() {
         <Alert types={AlertType.Warning} hasClose={true} />
         <Alert types={AlertType.Success} title="成功的Alert" hasClose={true} />
         {/* Menu */}
-        <Menu defaultIndex={0}>
+        <Menu defaultIndex='0' mode="vertical" onSelect={(index)=> alert(index)} defaultOpenSubMenu={['2']}>
           <MenuItem>111</MenuItem>
           <MenuItem>222</MenuItem>
-          <SubMenu title="open It">
-          <MenuItem>333</MenuItem>
+          <SubMenu title="open It" index="3-0">
+            <MenuItem>333</MenuItem>
           </SubMenu>
           <MenuItem>555</MenuItem>
           <MenuItem>444</MenuItem>
