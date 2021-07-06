@@ -64,6 +64,24 @@
         color: $menu-item-active-color !important;
       }
     }
+    .submenu-item-title {
+      display: flex;
+      align-items:center
+    }
+    .arrow-icon {
+      margin-left: 3px;
+      transition: transform 0.25 ease-in-out;
+    }
+    &:hover {
+      .arrow-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .submenu-vertical {
+    .arrow-icon {
+      transform: rotate(0deg) !important;
+    }
   }
   .submenu.menu-opened {
     display: block;

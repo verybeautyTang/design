@@ -1,7 +1,16 @@
+/*
+ * @Author: your name
+ * @Date: 2021-06-28 23:16:27
+ * @LastEditTime: 2021-07-06 22:31:11
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \beautytang-designs\src\components\menu\sub-menu.tsx
+ */
 import React, { useContext, useState } from "react";
 import classNames from "classnames";
 import { MenuContext } from "./menu";
 import { MenuItemProps } from "./menu-item";
+import Icon from "../icon/index";
 interface ISubMenuProps {
   index?: string,
   title?: string,
@@ -17,10 +26,13 @@ const SubMenu: React.FC<ISubMenuProps> = (props:ISubMenuProps) => {
   console.log('context.index', context.index);
   console.log('index',index);
   const classes = classNames('menu-item submenu-item',className,  {
-    'menu-item-active': context.index === index
+    'menu-item-active': context.index === index,
+    'menu-opened': menuOpen,
+    'submenu-vertical': context.mode === 'vertical'
   })
   const subMenuClasses = classNames('submenu',className,  {
-    'menu-opened': menuOpen
+    'menu-opened': menuOpen,
+    'submenu-vertical': context.mode === 'vertical'
   })
   const handleClick = (e : React.MouseEvent) => {
     e.preventDefault()
@@ -61,6 +73,7 @@ const SubMenu: React.FC<ISubMenuProps> = (props:ISubMenuProps) => {
     <li key={index} className={classes} {...hoverEvents}>
       <div className="submenu-item-title" {...clickEvents}>
         {title}
+        <Icon size="sm" icon="angle-down" className="arrow-icon"></Icon>
       </div>
       {renderSubMenu()}
     </li>

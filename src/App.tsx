@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-06-08 20:45:22
- * @LastEditTime: 2021-07-05 23:40:12
+ * @LastEditTime: 2021-07-06 22:32:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \beautytang-designs\src\App.tsx
@@ -37,11 +37,11 @@ function App() {
         <Alert types={AlertType.Warning} hasClose={true} />
         <Alert types={AlertType.Success} title="成功的Alert" hasClose={true} />
         {/* Menu */}
-        <Menu defaultIndex='0' mode="vertical" onSelect={(index)=> alert(index)} defaultOpenSubMenu={['2']}>
+        <Menu defaultIndex='0' onSelect={(index)=> alert(index)} defaultOpenSubMenu={['2']}>
           <MenuItem>111</MenuItem>
           <MenuItem>222</MenuItem>
-          <SubMenu title="open It" index="3-0">
-            <MenuItem>333</MenuItem>
+          <SubMenu title="open It" index="2-0">
+            <MenuItem>333</MenuItem> 
           </SubMenu>
           <MenuItem>555</MenuItem>
           <MenuItem>444</MenuItem>
